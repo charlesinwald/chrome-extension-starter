@@ -1,0 +1,27 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filter to generate seamless noise for wood grain -->
+    <filter id="woodFilter" filterUnits="userSpaceOnUse">
+      <feTurbulence 
+        type="fractalNoise" 
+        baseFrequency="0.05" 
+        numOctaves="4" 
+        result="noise" 
+        stitchTiles="stitch"/>
+      <!-- Blend the noise over the base graphic -->
+      <feBlend in="SourceGraphic" in2="noise" mode="multiply"/>
+    </filter>
+    <!-- Linear gradient to define mahogany colors -->
+    <linearGradient id="woodGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7A3E21"/>
+      <stop offset="100%" stop-color="#3B1F0B"/>
+    </linearGradient>
+    <!-- Pattern that uses the gradient and overlays the noise filter -->
+    <pattern id="mahoganyPattern" patternUnits="userSpaceOnUse" width="256" height="256">
+      <rect width="256" height="256" fill="url(#woodGradient)"/>
+      <rect width="256" height="256" fill="#ffffff" fill-opacity="0.2" filter="url(#woodFilter)"/>
+    </pattern>
+  </defs>
+  <!-- Apply the pattern to fill the SVG -->
+  <rect width="100%" height="100%" fill="url(#mahoganyPattern)"/>
+</svg>

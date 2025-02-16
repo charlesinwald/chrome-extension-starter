@@ -1,15 +1,42 @@
+/* Add in your HTML head:
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+*/
+
 body {
   min-height: 100%;
   width: 100vw;
-  background: linear-gradient(to bottom, #807fba, #34005d);
+  /* Use a parchment-like background image */
+  background: url("src/chrome-extension/public/homecity.webp") no-repeat center
+    center fixed;
+  background-size: cover;
+  /* A fallback background in case image doesn't load */
+  background-color: #e8dcbc;
+  font-family: "Cinzel", serif;
+  color: #3e2723; /* Dark earthy tone for text */
+}
+.navbar {
+  color: #f5f5dc; /* Beige text */
+  font-size: x-large;
+  margin-bottom: 20px;
+  /* background: url('../src/chrome-extension/public/wood.jpg') no-repeat center center;
+  background-size: 100% 100%;  Stretches the image to fill the container */
+  border-bottom: 2px solid #a0522d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* border: 10px solid transparent; */
 }
 
-.navbar {
-  background-color: #807fba/80;
-  color: white;
-  font-size: x-large;
-  border-bottom: 1px gainsboro solid;
-  margin-bottom: 20px;
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px; /* Adjust thickness as needed */
+  /* Use a gradient to simulate a subtle wood edge */
+  background: linear-gradient(to right, #7a3e21, #3b1f0b);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .inner-navbar {
@@ -20,13 +47,29 @@ body {
   padding: 10px;
   flex-direction: row;
   justify-content: space-between;
+  /* background: url('src/chrome-extension/public/wood.jpg') no-repeat center center;
+  background-size: 100% 100%;  Stretches the image */
+  box-shadow: inset 0 2px 2rem rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+}
+
+/* .navbar, .inner-navbar {
+  background: url('src/chrome-extension/public/wood.jpg') no-repeat center center !important;
+  background-size: cover !important;
+} */
+
+.navbar {
+  background: url("src/chrome-extension/public/horses.png") no-repeat center
+    center;
+  background-size: cover;
+  /* other styles */
 }
 
 .title {
   font-weight: 700;
   font-size: x-large;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto;
+  font-family: "Cinzel", serif;
 }
 
 .menu {
@@ -35,16 +78,18 @@ body {
 }
 
 .menu > * {
-  border: 2px solid white;
+  border: 2px solid #f5f5dc; /* Beige border */
   font-size: x-large;
   border-radius: 7px;
   padding: 5px 10px;
   font-weight: 700;
   transition: all 0.3s ease;
+  background-color: rgba(139, 69, 19, 0.8);
+  color: #f5f5dc;
 }
 
 .menu > *:hover {
-  border: 2px solid #34005d;
-  background-color: white;
-  color: #34005d;
+  border: 2px solid #a0522d;
+  background-color: #f5f5dc;
+  color: #3e2723;
 }
